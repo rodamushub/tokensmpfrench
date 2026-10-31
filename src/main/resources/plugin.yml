@@ -1,0 +1,38 @@
+name: TokenSMP
+version: ${version}
+main: dev.tokensmp.TokenSMPPlugin
+api-version: '26.2'
+description: Competitive PvP SMP with tokens, bounties, leaderboards and polished GUIs.
+authors: [TokenSMP]
+
+commands:
+  tokens:
+    description: Check your tokens, pay players, view the richest players.
+    usage: /tokens [pay <player> <amount>|top|menu]
+    aliases: [token]
+    permission: tokensmp.use
+  bounty:
+    description: Place and view bounties.
+    usage: /bounty <player> <amount> | list | top | check <player>
+    aliases: [bounties]
+    permission: tokensmp.use
+  help:
+    description: Token SMP help.
+    usage: /help [tokens|bounty|commands]
+    permission: tokensmp.use
+  tutorial:
+    description: Open the interactive tutorial.
+    usage: /tutorial
+    permission: tokensmp.use
+  tokensmp:
+    description: Token SMP main menu and administration.
+    usage: /tokensmp [menu|reload|give|take|set|balance|clearbounty|ledger|hologram]
+    aliases: [tsmp, smp]
+
+permissions:
+  tokensmp.use:
+    description: Use player commands and menus.
+    default: true
+  tokensmp.admin:
+    description: Use /tokensmp administration subcommands.
+    default: op

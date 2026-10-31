@@ -1,0 +1,163 @@
+# Tous les textes du chat destinés aux joueurs (format MiniMessage). Les variables s'écrivent <nom>.
+# <prefix>, <symbol> et <currency> fonctionnent dans tous les messages.
+
+prefix: "<dark_gray>[<gold>Token SMP</gold>]</dark_gray> "
+
+# ── Général ──────────────────────────────────────────────
+no-permission: "<prefix><red>Tu n'as pas la permission de faire ça."
+player-only: "<prefix><red>Seuls les joueurs peuvent utiliser cette commande."
+unknown-player: "<prefix><red>Aucun joueur nommé <white><player></white> ne s'est déjà connecté sur ce serveur."
+invalid-amount: "<prefix><red>Entre un montant valide, par exemple <white>500</white> ou <white>2k</white>."
+not-enough: "<prefix><red>Il te faut <white><amount> <symbol></white> mais tu n'as que <white><balance> <symbol></white>."
+self-target: "<prefix><red>Tu ne peux pas faire ça sur toi-même."
+cancelled: "<prefix><gray>Annulé."
+prompt-search: "<prefix><gray>Écris un pseudo dans le chat. Écris <white>annuler</white> pour abandonner."
+prompt-amount: "<prefix><gray>Écris un montant dans le chat, par exemple <white>750</white>. Écris <white>annuler</white> pour abandonner."
+prompt-timeout: "<prefix><gray>Temps écoulé, saisie annulée."
+
+# ── Tokens ───────────────────────────────────────────────
+balance: "<prefix><gray>Solde : <gold><balance> <symbol></gold> <dark_gray>(rang <white>#<rank></white>)"
+pay-below-min: "<prefix><red>Le transfert minimum est de <white><min> <symbol></white>."
+pay-same-network: "<prefix><red>Tu ne peux pas envoyer de tokens à un compte de ton propre réseau."
+pay-sent: "<prefix><green>Tu as envoyé <white><amount> <symbol></white> à <white><player></white>."
+pay-received: "<prefix><green>Tu as reçu <white><amount> <symbol></white> de la part de <white><player></white>."
+top-header: "<prefix><gold><title>"
+top-line: "<gray><rank>. <white><player> <dark_gray>» <gold><value>"
+top-empty: "<gray>Rien à afficher pour l'instant."
+
+# ── Kills et morts ───────────────────────────────────────
+kill-reward: "<prefix><green>Tu as tué <white><victim></white>. <gold>+<total> <symbol></gold> <gray>(récompense <reward> + volés <stolen>)"
+death-loss: "<prefix><red>Tué par <white><killer></white>. <gold>-<lost> <symbol></gold> <gray>(<remaining> restants)"
+kill-blocked-network: "<prefix><gray>Pas de récompense : toi et <white><victim></white> partagez le même réseau."
+kill-blocked-repeat: "<prefix><gray>Pas de récompense : tu as tué <white><victim></white> récemment. Essaie quelqu'un d'autre."
+combat-tagged: "<red>En combat ! Se déconnecter maintenant compte comme une mort."
+combat-log: "<prefix><red><player></red><gray> s'est déconnecté en plein combat et a perdu des tokens."
+
+# ── Primes ───────────────────────────────────────────────
+bounty-too-low: "<prefix><red>La prime minimum est de <white><min> <symbol></white>."
+bounty-cap: "<prefix><red>Une prime ne peut pas dépasser <white><max> <symbol></white>. Actuellement : <white><current> <symbol></white>."
+bounty-placed: "<prefix><green>Tu as placé <white><amount> <symbol></white> sur la tête de <white><target></white>. Total : <gold><total> <symbol></gold>."
+bounty-on-you: "<prefix><red><placer></red><gray> a placé <white><amount> <symbol></white> sur ta tête. Total : <white><total> <symbol></white>."
+bounty-broadcast-placed: "<prefix><gold><placer></gold><gray> a mis <gold><amount> <symbol></gold><gray> sur la tête de <red><target></red><gray>. Prime totale : <gold><total> <symbol></gold>"
+bounty-claimed: "<prefix><gold>Prime récupérée ! <white>+<amount> <symbol></white> pour avoir tué <white><target></white>."
+bounty-broadcast-claimed: "<prefix><gold><killer></gold><gray> a récupéré la prime de <gold><amount> <symbol></gold><gray> sur <red><target></red><gray> !"
+bounty-refunded: "<prefix><gray>Ta contribution de <white><amount> <symbol></white> à la prime sur <white><target></white> t'a été remboursée."
+bounty-check: "<prefix><gray><target> a une prime de <gold><total> <symbol></gold> <dark_gray>(<count> contributeur(s))"
+bounty-check-none: "<prefix><gray><target> n'a pas de prime."
+bounty-list-header: "<prefix><gold><title> <dark_gray>(page <page>/<pages>)"
+bounty-list-line: "<gray><rank>. <red><target> <dark_gray>» <gold><total> <symbol>"
+bounty-list-empty: "<prefix><gray>Il n'y a aucune prime active."
+
+# ── Retour des paramètres ────────────────────────────────
+setting-on: "<prefix><gray><setting> : <green>activé"
+setting-off: "<prefix><gray><setting> : <red>désactivé"
+
+# ── Administration ───────────────────────────────────────
+admin-reloaded: "<prefix><green>Configuration rechargée."
+admin-balance: "<prefix><gray><player> a <gold><balance> <symbol></gold>."
+admin-adjusted: "<prefix><green>C'est fait. <white><player></white> a maintenant <gold><balance> <symbol></gold>."
+admin-bounty-cleared: "<prefix><green>La prime sur <white><player></white> a été supprimée. Les contributions ont été remboursées."
+admin-usage: "<prefix><gray>Admin : /tokensmp <white>reload | balance <p> | give <p> <n> | take <p> <n> | set <p> <n> | clearbounty <p> | ledger [n] | hologram create|remove|list"
+admin-hologram-created: "<prefix><green>Hologramme #<id> créé (<type>)."
+admin-hologram-removed: "<prefix><green>Hologramme #<id> supprimé."
+admin-hologram-missing: "<prefix><red>Aucun hologramme avec cet identifiant."
+admin-hologram-list: "<prefix><gray>#<id> <white><type> <dark_gray>(<world> <x> <y> <z>)"
+admin-hologram-types: "<prefix><red>Types : <white>richest, kills, bounty, claimed, placed"
+
+# ── Bienvenue et aide ────────────────────────────────────
+welcome-title: "<gold><bold>Bienvenue sur Token SMP"
+welcome-subtitle: "<gray>Combats, gagne des tokens, chasse les primes"
+welcome:
+  - ""
+  - "<gold><bold>Bienvenue sur Token SMP, <player> !"
+  - "<gray>Un serveur survie où le <white>PvP</white> décide qui est le plus riche."
+  - "<gold>◆ <white>Chaque kill rapporte <gold><reward> <symbol></gold> plus <gold><steal>%</gold> des tokens de la victime."
+  - "<red>☠ <white>Si un joueur te tue, tu perds <red><steal>%</red> de tes tokens."
+  - "<yellow>⚑ <white>Dépense des tokens en primes. Celui qui tue la cible les récupère."
+  - ""
+  - "<click:run_command:/tutorial><hover:show_text:'Ouvrir le tutoriel'><green>» Clique ici ou tape <white>/tutorial</white> pour en savoir plus</hover></click>"
+  - "<click:run_command:/tokensmp><hover:show_text:'Ouvrir le menu principal'><green>» Tape <white>/tokensmp</white> pour ouvrir le menu principal</hover></click>"
+  - ""
+
+help:
+  main:
+    - "<gold><bold>Aide Token SMP"
+    - "<click:run_command:/help tokens><hover:show_text:'Voir les infos sur les tokens'><white>/help tokens</white> <gray>- comment marchent les tokens</hover></click>"
+    - "<click:run_command:/help bounty><hover:show_text:'Voir les infos sur les primes'><white>/help bounty</white> <gray>- comment marchent les primes</hover></click>"
+    - "<click:run_command:/help commands><hover:show_text:'Lister toutes les commandes'><white>/help commands</white> <gray>- toutes les commandes</hover></click>"
+    - "<click:run_command:/tutorial><hover:show_text:'Ouvrir le tutoriel'><white>/tutorial</white> <gray>- tutoriel interactif</hover></click>"
+    - "<click:run_command:/tokensmp><hover:show_text:'Ouvrir le menu'><white>/tokensmp</white> <gray>- menu principal</hover></click>"
+  tokens:
+    - "<gold><bold>Tokens"
+    - "<gray>Les tokens sont la monnaie du serveur et sont sauvegardés définitivement."
+    - "<white>• <gray>Chaque kill rapporte <gold><reward> <symbol></gold>."
+    - "<white>• <gray>Mourir contre un joueur te coûte <red><steal>%</red> de tes tokens ; le tueur les prend."
+    - "<white>• <gray>Les morts naturelles et les suicides ne coûtent rien et ne rapportent rien."
+    - "<white>• <gray>Se déconnecter en combat compte comme une mort."
+    - "<white>• <gray>Tuer plusieurs fois le même joueur ne rapporte rien de plus."
+  bounty:
+    - "<gold><bold>Primes"
+    - "<gray>Mets des tokens sur la tête d'un joueur. Celui qui le tue récupère la prime."
+    - "<white>• <gray>Plusieurs joueurs peuvent ajouter à la même prime."
+    - "<white>• <gray>Le coût est déduit immédiatement. Minimum : <gold><bounty-min> <symbol></gold>."
+    - "<white>• <gray>Les primes sont publiques : vois <white>/bounty list</white> et la liste des joueurs (tab)."
+    - "<white>• <gray>Tu ne peux pas encaisser une prime que tu as financée ; ta part est remboursée."
+  commands:
+    - "<gold><bold>Commandes"
+    - "<white>/tokens <gray>- ton solde"
+    - "<white>/tokens pay <player> <amount> <gray>- envoyer des tokens"
+    - "<white>/tokens top <gray>- les joueurs les plus riches"
+    - "<white>/bounty <player> <amount> <gray>- placer une prime"
+    - "<white>/bounty list <gray>- toutes les primes actives"
+    - "<white>/bounty top <gray>- les plus grosses primes"
+    - "<white>/bounty check <player> <gray>- voir la prime d'un joueur"
+    - "<white>/tokensmp <gray>- menu principal (stats, classements, paramètres)"
+    - "<white>/tutorial <gray>- tutoriel interactif"
+
+# ── Pages du tutoriel (affichées dans le menu tutoriel) ──
+tutorial:
+  pages:
+    1:
+      title: "Bienvenue"
+      lines:
+        - "<gray>Token SMP, c'est du survie avec"
+        - "<gray>une économie compétitive."
+        - ""
+        - "<white>Combats des joueurs, gagne des tokens,"
+        - "<white>chasse les primes et deviens le"
+        - "<gold>joueur le plus riche du serveur."
+    2:
+      title: "Gagner des tokens"
+      lines:
+        - "<gray>Chaque kill rapporte"
+        - "<gold><reward> <symbol></gold> <gray>plus <gold><steal>%</gold> <gray>du solde"
+        - "<gray>de la victime."
+        - ""
+        - "<gray>Vérifie ton solde avec"
+        - "<white>/tokens</white><gray>."
+    3:
+      title: "Le risque"
+      lines:
+        - "<gray>Si un joueur te tue, tu perds"
+        - "<red><steal>%</red> <gray>de tes tokens."
+        - "<gray>Le tueur les reçoit."
+        - ""
+        - "<gray>Se déconnecter en combat compte"
+        - "<gray>comme une mort."
+    4:
+      title: "Les primes"
+      lines:
+        - "<gray>Dépense des tokens pour mettre une prime"
+        - "<gray>sur un ennemi. Celui qui le tue"
+        - "<gray>récupère toute la prime."
+        - ""
+        - "<gray>Ouvre le menu depuis le menu principal ou"
+        - "<white>/bounty<gray>."
+    5:
+      title: "Les commandes"
+      lines:
+        - "<white>/tokensmp <gray>menu principal"
+        - "<white>/tokens pay <gray>envoyer des tokens"
+        - "<white>/bounty <gray>menu des primes"
+        - "<white>/help <gray>aide dans le chat"
+        - "<white>/tutorial <gray>ce tutoriel"

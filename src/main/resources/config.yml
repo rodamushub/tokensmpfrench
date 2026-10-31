@@ -1,0 +1,84 @@
+# ─────────────────────────────────────────────────────────────
+#  Token SMP configuration. Run /tokensmp reload after editing.
+#  Text shown to players lives in messages.yml.
+# ─────────────────────────────────────────────────────────────
+
+tokens:
+  kill-reward: 100            # flat tokens minted for every valid kill
+  steal-percent: 50           # % of the victim's balance moved to the killer
+  max-steal-per-kill: 0       # 0 = no cap on stolen tokens
+  starting-balance: 0
+  symbol: "◆"
+  currency-name: "Tokens"
+
+pvp:
+  disabled-worlds: []         # no rewards or token loss in these worlds
+
+anti-exploit:
+  repeat-kill:
+    cooldown-seconds: 600     # same killer + same victim: no rewards inside this window
+    max-per-hour: 3           # and at most this many rewarded kills per pair per hour
+  block-same-network-kills: true      # killer and victim share an IP: no rewards
+  block-same-network-transfers: false # also block /tokens pay between shared-IP accounts
+
+combat:
+  enabled: true
+  tag-seconds: 15
+  kill-on-logout: true                    # logging out while tagged kills the player
+  count-environment-deaths-while-tagged: true  # falling/lava while tagged still counts as a PvP death
+
+bounty:
+  min-amount: 50
+  max-total-per-player: 1000000
+  presets: [100, 500, 1000, 5000, 10000]  # quick-pick buttons in the GUI (max 5)
+  broadcast-placed-min: 1000              # broadcast placements of at least this size
+  broadcast-claimed-min: 500              # broadcast claims of at least this size
+  show-in-tab-list: true                  # show the bounty next to the player's tab name
+  confirm: true
+
+transfers:
+  min-amount: 1
+  confirm: true
+
+sounds:
+  enabled: true
+  min-interval-ms: 150        # per player, per sound type
+  # Any vanilla sound key works. Use your own resource-pack keys here if you add a pack later.
+  events:
+    token-received: { sound: "entity.experience_orb.pickup", volume: 0.7, pitch: 1.3 }
+    token-lost:     { sound: "block.note_block.bass",        volume: 0.8, pitch: 0.6 }
+    bounty-placed:  { sound: "block.note_block.chime",       volume: 0.8, pitch: 1.0 }
+    bounty-claimed: { sound: "ui.toast.challenge_complete",  volume: 0.7, pitch: 1.0 }
+    success:        { sound: "block.note_block.pling",       volume: 0.6, pitch: 1.6 }
+    declined:       { sound: "entity.villager.no",           volume: 0.8, pitch: 1.0 }
+    menu-open:      { sound: "block.wooden_button.click_on", volume: 0.4, pitch: 1.2 }
+    menu-close:     { sound: "block.wooden_button.click_off", volume: 0.4, pitch: 0.9 }
+    first-join:     { sound: "entity.firework_rocket.twinkle", volume: 0.8, pitch: 1.0 }
+
+scoreboard:
+  enabled: true
+  update-ticks: 20
+  title: "<gold><bold>TOKEN SMP"
+  # Placeholders: <tokens> <kills> <deaths> <bounty> <rank>
+  lines:
+    - ""
+    - "<gold><symbol> Tokens <white><tokens>"
+    - "<red>☠ Kills <white><kills>"
+    - "<yellow>⚑ Prime <white><bounty>"
+    - ""
+    - "<gray>/tokensmp pour le menu"
+
+leaderboards:
+  cache-seconds: 5
+  gui-entries: 14             # 7 or 14 fit the menu layout
+
+holograms:
+  enabled: true
+  refresh-seconds: 30
+  entries: 10
+
+logging:
+  log-transactions-to-console: true   # every transaction is always stored in the ledger table
+
+gui:
+  click-cooldown-ms: 150      # ignores faster clicks, prevents double-submits
